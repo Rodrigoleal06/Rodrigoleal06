@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación para Daniela</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 50px;
+            background-image: url('https://www.publicdomainpictures.net/pictures/250000/nahled/valentines-day-background-1515512420xtX.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            position: relative;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #yes {
+            background-color: red;
+            color: white;
+        }
+        #no {
+            background-color: gray;
+            color: white;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: red;
+        }
+        #flowers {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://los40ar00.epimg.net/los40/imagenes/2021/08/18/tecnologia/1629298995_035720_1629299442_noticia_normal.jpg" alt="Gatito tierno" width="300">
+        <img src="https://i.pinimg.com/236x/1a/f8/bd/1af8bd959b4392c617aeb60166b80001.jpg" alt="Gatito adorable" width="300">
+    </div>
+    <div class="container">
+        <h2>Dani, ¿quieres ser mi San Valentín? ❤️</h2>
+        <div class="buttons">
+            <button id="yes" onclick="showLove()">Sí</button>
+            <button id="no" onclick="changeNo()">No</button>
+        </div>
+        <p id="message">Dani, te amo muchísimo y eres la persona más especial para mí. Te dije que me iba a esforzar cada día más y más. Haré todo lo que sea necesario para no perder nunca más tu sonrisa y enamorarte día tras día. Te amo mi princesa hermosa ❤️</p>
+        <div id="flowers">
+            <img src="https://s0.smartresize.com/wallpaper/649/950/HD-wallpaper-tender-blue-heart-flowers-roses-blue-heart.jpg" alt="Rosas azules" width="200">
+            <img src="https://pm1.aminoapps.com/6411/b1b506b7607a143e9ad8147acf2681a406c4334b_00.jpg" alt="Rosa azul especial" width="200">
+        </div>
+    </div>
+    <script>
+        let noTexts = ["Por favor...", "Piénsalo bien", "¿Segura?", "Última oportunidad...", "No puedes decir que no 💔"];
+        let index = 0;
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        
+        function changeNo() {
+            if (index < noTexts.length) {
+                noButton.innerText = noTexts[index];
+                index++;
+                yesButton.style.transform = `scale(${1 + index * 0.2})`;
+            } else {
+                noButton.style.display = "none";
+            }
+        }
+        
+        function showLove() {
+            document.getElementById("message").style.display = "block";
+            document.querySelector(".buttons").style.display = "none";
+            document.getElementById("flowers").style.display = "block";
+        }
+    </script>
+</body>
+</html>
